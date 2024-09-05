@@ -28,7 +28,7 @@ productCltr.create = async (req, res)=>{
         console.log('Image file:', image);
 
         const result = await cloudinary.uploader.upload(image.tempFilePath, {
-            folder: "products"
+            folder: "teraleads-products"
         });
         console.log('Cloudinary response:', result);
 
@@ -55,7 +55,7 @@ productCltr.update = async (req, res) => {
         const {files} = req
         if (files && files.productImage) {
             const result = await cloudinary.uploader.upload(image.tempFilePath,{
-                folder : "products"
+                folder : "teraleads-products"
             })
             body.productImage = { image_url : result.secure_url }
         }
