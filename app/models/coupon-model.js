@@ -12,8 +12,11 @@ const couponSchema = new Schema({
         ref: 'Order'
     },
     couponCode: String,
-    description: String
-})
+    discount: Number,
+    description: String,
+    startDate: Date,
+    endDate: Date
+}, {Timestamp : true})
 
 const Coupon = model('Coupon', couponSchema)
 

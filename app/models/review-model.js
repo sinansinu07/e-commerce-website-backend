@@ -3,20 +3,14 @@ const mongoose = require('mongoose')
 const { Schema, model } = mongoose
 
 const reviewSchema = new Schema({
-    customer: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-    },
-    product: {
-        type: Schema.Types.ObjectId,
-        ref: 'Product'
-    },
+    name: String,
+    email: String,
     rating: {
         type: Number,
         required: true
     },
     description: String
-})
+}, {timestamps: true})
 
 const Review = model('Review', reviewSchema)
 

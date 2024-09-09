@@ -28,12 +28,12 @@ userCltr.login = async (req, res) => {
         console.log(body)
         const user = await User.findOne({$or:[{ 'phone.number' : body.username}, {email : body.username}]})
         if(!user) {
-            return res.status(401).json({error: '1, Invalid Username/Password'})
+            return res.status(401).json({error: 'Invalid Username/Password'})
         }
 
         const checkPassword = await bcrypt.compare(body.password, user.password)
         if(!checkPassword) {
-            return res.status(401).json({error: '2, Invalid Username/Password'})
+            return res.status(401).json({error: 'Invalid Username/Password'})
         }
         const tokenData = {
             id : user._id

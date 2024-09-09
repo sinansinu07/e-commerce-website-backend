@@ -1,11 +1,11 @@
 const express = require('express')
 const router = express.Router()
 const reviewCltr = require('../controllers/review-controller')
-const authenticateUser = require('../middlewares/auth')
+// const authenticateUser = require('../middlewares/auth')
 
 router
     .route('/')
-        .post(authenticateUser, reviewCltr.create)
-        .get(authenticateUser, reviewCltr.list)        
+        .post(reviewCltr.create)
+        .get(reviewCltr.list)        
 
 module.exports = router

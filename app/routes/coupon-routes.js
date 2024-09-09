@@ -4,8 +4,10 @@ const couponCltr = require('../controllers/coupon-controller')
 const authenticateUser = require('../middlewares/auth')
 
 router
-    .route('/:id')
+    .route('/:id/coupon1')
         .post(authenticateUser, couponCltr.createCoupon1)
+router
+    .route('/:id/coupon2')
         .post(authenticateUser, couponCltr.createCoupon2)
 router 
     .route('/myCoupons')
