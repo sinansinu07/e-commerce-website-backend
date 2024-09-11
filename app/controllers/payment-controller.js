@@ -48,8 +48,10 @@ paymentsCltr.payment = async (req, res)=>{
                 payment_method_types:["card"],
                 line_items:lineItems,
                 mode:"payment",
-                success_url:"http://localhost:3000/customer-container", //Change the url
-                cancel_url: 'http://localhost:3000/cart',
+                // success_url:"http://localhost:3000/customer-container",
+                // cancel_url: 'http://localhost:3000/cart',
+                success_url:"https://teraleads-project-frontend.vercel.app/customer-container",
+                cancel_url: 'https://teraleads-project-frontend.vercel.app/cart',
                 customer : customer.id
             })
             
